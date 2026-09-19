@@ -9,6 +9,13 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                    credentialsId: 'git-token',
+                    url: 'https://github.com/pabhishek1994-pixel/maven-my-app.git'
+            }
+        }
         stage('Maven Build') {
             steps {
                 sh 'mvn clean package'
