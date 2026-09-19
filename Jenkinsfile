@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'github-credentials',
+                    credentialsId: 'git-token',
                     url: 'https://github.com/pabhishek1994-pixel/maven-my-app.git'
             }
         }
